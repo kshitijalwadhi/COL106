@@ -1,0 +1,39 @@
+a)
+
+delete(node n1):
+    // n1 is pointer of the node to be deleted
+
+    // no element
+    if(head= NULL and tail = NULL) then
+        raise EmptyException
+
+    // only 1 element
+    if( head = n1 and tail = n1) then
+        head <- NULL
+        tail <- NULL
+
+    // element at head
+    else if(head = n1) then
+        head <- (n1.next)
+        (n1.next.prev) <- NULL 
+    
+    // element at tail
+    else if(tail= n1) then
+        tail <- (n1.prev)
+        n1.prev.next <- NULL
+
+    // element in middle
+    else
+        (n1.prev.next) <- (n1.next)
+        n1.next.prev <- n1.prev
+
+    clear memory of n1
+
+b) 
+
+delete(node n1):
+
+    n1.prev.next <- n1.next
+    n1.next.prev <- n1.prev
+
+    clear memory of n1

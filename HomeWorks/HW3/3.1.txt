@@ -1,0 +1,18 @@
+Q[0...N-1] array of length N
+ 
+enqueue(o):
+    if size() = N-1 then 
+        expand()
+    Q[r] <- o
+    r <- (r+1) mod N
+
+
+expand():
+    // N-1 elements present in array Q. 
+    newQ <- new array of size 2*N
+    for i <- 0 to N-2 do
+        newQ[i] <- Q[f]
+        f <- (f+1) mod N
+    f <- 0
+    r <- N - 1
+    Q <- newQ

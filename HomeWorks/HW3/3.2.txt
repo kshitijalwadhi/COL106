@@ -1,0 +1,5 @@
+a) 1 step. new node. connect with old front. 
+
+b) n-1 steps to reach second last node.
+
+c) 1 step.

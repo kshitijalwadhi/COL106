@@ -1,0 +1,10 @@
+// given the head of circular queue
+// and the data to be inserted
+
+insert(Datatype d1)
+    node n1 <- new node()
+    n1.next <- head.next
+    n1.data <- head.data
+    head.data <- d1
+    head.next <- n1
+    head <- n1
