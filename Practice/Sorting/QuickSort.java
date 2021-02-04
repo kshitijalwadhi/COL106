@@ -3,19 +3,24 @@ public class QuickSort {
     public int partition(int arr[], int l, int r) {
         int pivot = arr[r];
         int i = l;
-        int j = r;
+        int j = r - 1;
         while (true) {
-            while (arr[j] > pivot)
-                j--;
-            while (arr[i] < pivot)
-                i++;
-            if (i < j) {
-                int c = arr[j];
-                arr[j] = arr[i];
-                arr[i] = c;
-            } else
-                return j;
+            while (j > 0 && arr[--j] > pivot)
+
+                while (arr[++i] < pivot)
+
+                    if (i >= j)
+                        break;
+                    else {
+                        int c = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = c;
+                    }
         }
+        int b = arr[i];
+        arr[i] = arr[r];
+        arr[r] = b;
+
     }
 
     public void qsort(int arr[], int l, int r) {
